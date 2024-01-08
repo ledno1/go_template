@@ -68,3 +68,4 @@ main.exe~
 !hotgo/
 *.lock
 /bin/package.sh
+server/logs
