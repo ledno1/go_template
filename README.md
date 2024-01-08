@@ -1,5 +1,13 @@
 # sms_server
 
+修改 项目名 
+
+修改 token密钥
+
+修改 hack 文件夹的config
+
+打包项目名 打包名
+
 
 
 # 新建接口与服务
