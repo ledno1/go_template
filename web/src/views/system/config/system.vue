@@ -28,6 +28,7 @@
           <GeoSetting v-if="type === 9" />
           <PaySetting v-if="type === 10" />
           <WechatSetting v-if="type === 11" />
+          <BusinessBaseSetting v-if="type === 12" />
         </n-card>
       </n-grid-item>
     </n-grid>
@@ -46,63 +47,77 @@
   import PaySetting from './PaySetting.vue';
   import WechatSetting from './WechatSetting.vue';
   import LoginSetting from './LoginSetting.vue';
-  const typeTabList = [
+  import BusinessBaseSetting from './BusinessBaseSetting.vue';
+  import { useUserStore } from '@/store/modules/user';
+  const userStore = useUserStore();
+  var typeTabList = [
     {
-      name: '基本设置',
-      desc: '系统常规设置',
-      key: 1,
-    },
-    // {
-    //   name: '主题设置',
-    //   desc: '系统主题设置',
-    //   key: 2,
-    // },
-    // {
-    //   name: '显示设置',
-    //   desc: '系统显示设置',
-    //   key: 3,
-    // },
-    {
-      name: '邮件设置',
-      desc: '系统邮件设置',
-      key: 4,
-    },
-    {
-      name: '短信配置',
-      desc: '短信验证码平台',
-      key: 5,
-    },
-    {
-      name: '登录注册',
-      desc: '登录注册配置',
-      key: 6,
-    },
-    {
-      name: '提现配置',
-      desc: '管理员提现规则配置',
-      key: 7,
-    },
-    {
-      name: '云存储',
-      desc: '配置上传文件驱动',
-      key: 8,
-    },
-    {
-      name: '地理位置',
-      desc: '配置地理位置工具',
-      key: 9,
-    },
-    {
-      name: '支付配置',
-      desc: '支付宝/微信/QQ支付配置等',
-      key: 10,
-    },
-    {
-      name: '微信配置',
-      desc: '公众号/开放平台/小程序配置等',
-      key: 11,
+      name: '业务设置',
+      desc: '业务基本设置',
+      key: 12,
     },
   ];
+  if (userStore.getUserInfo?.id == 1) {
+    const tTypeTabList = [
+      {
+        name: '基本设置',
+        desc: '系统常规设置',
+        key: 1,
+      },
+      // {
+      //   name: '主题设置',
+      //   desc: '系统主题设置',
+      //   key: 2,
+      // },
+      // {
+      //   name: '显示设置',
+      //   desc: '系统显示设置',
+      //   key: 3,
+      // },
+      {
+        name: '邮件设置',
+        desc: '系统邮件设置',
+        key: 4,
+      },
+      {
+        name: '短信配置',
+        desc: '短信验证码平台',
+        key: 5,
+      },
+      {
+        name: '登录注册',
+        desc: '登录注册配置',
+        key: 6,
+      },
+      {
+        name: '提现配置',
+        desc: '管理员提现规则配置',
+        key: 7,
+      },
+      {
+        name: '云存储',
+        desc: '配置上传文件驱动',
+        key: 8,
+      },
+      {
+        name: '地理位置',
+        desc: '配置地理位置工具',
+        key: 9,
+      },
+      {
+        name: '支付配置',
+        desc: '支付宝/微信/QQ支付配置等',
+        key: 10,
+      },
+      {
+        name: '微信配置',
+        desc: '公众号/开放平台/小程序配置等',
+        key: 11,
+      },
+    ];
+    console.log(tTypeTabList);
+    typeTabList = typeTabList.concat(tTypeTabList);
+  }
   export default defineComponent({
     components: {
       BasicSetting,
@@ -116,10 +131,11 @@
       PaySetting,
       WechatSetting,
       LoginSetting,
+      BusinessBaseSetting,
     },
     setup() {
       const state = reactive({
-        type: 1,
+        type: 12,
         typeTitle: '基本设置',
       });
 

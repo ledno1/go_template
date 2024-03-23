@@ -134,3 +134,82 @@
    ```
 
       
+
+# 添加自定义插件组件
+
+https://github.com/bufanyun/hotgo/blob/v2.0/docs/guide-zh-CN/addon-flow.md
+
+1 在开发工具插件管理添加 自动创建插件文件夹 到 指定项目位置
+
+2 开发流程与主服务相同 访问路径不同
+
+3 添加插件接口同主服务相同 数据类型建议继承主服务的input
+
+**创建流程**
+
+1 使用系统配置创建新插件 
+
+2 自己建表 添加模式为插件模式添加entity
+
+3 添加配置文件组件到 web的插件view路径
+
+4  
+
+### 访问路径 必需跟插件名称相同 大小写敏感
+
+#### 后台插件访问路径
+
+```
+// IP+端口或域名/admin/插件名称/API路径
+如：127.0.0.1:8000/admin/hgexample/index/test
+```
+
+
+
+- 对应控制器路径：`server/addons/hgexample/controller/admin/sys/index.go`
+
+#### 前端API插件访问路径
+
+```
+// IP+端口或域名/api/插件名称/API路径
+如：127.0.0.1:8000/api/hgexample/index/test
+```
+
+
+
+- 对应控制器路径：`server/addons/hgexample/controller/api/index.go`
+
+#### 前台页面插件访问路径
+
+```
+// IP+端口或域名/home/插件名称/API路径
+如：127.0.0.1:8000/home/hgexample/index/test
+```
+
+
+
+- 对应控制器路径：`server/addons/hgexample/controller/home/index.go`
+- 对应模板路径：`server/addons/hgexample/resource/public/template`
+
+#### 静态资源插件访问路径
+
+```
+// IP+端口或域名/home/插件名称/API路径
+如：127.0.0.1:8000/addons/hgexample/default
+```
+
+
+
+- 对应资源路径：`server/addons/hgexample/resource/public`
+
+#### Websocket插件访问路径
+
+```
+// IP+端口或域名/socket/插件名称/API路径
+如：127.0.0.1:8000/socket/hgexample/index/test
+```
+
+
+
+- 对应控制器路径：`server/addons/hgexample/controller/socket/index.go`
+

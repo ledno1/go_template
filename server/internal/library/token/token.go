@@ -260,7 +260,6 @@ func parseToken(ctx context.Context, header string) (*Claims, error) {
 	token, err := jwt.ParseWithClaims(header, &Claims{}, func(token *jwt.Token) (interface{}, error) {
 		return []byte(config.SecretKey), nil
 	})
-
 	if err != nil {
 		g.Log().Debugf(ctx, "parseToken err:%+v", err)
 		return nil, err
@@ -269,7 +268,6 @@ func parseToken(ctx context.Context, header string) (*Claims, error) {
 	if !token.Valid {
 		return nil, errorLogin
 	}
-
 	claims, ok := token.Claims.(*Claims)
 	if !ok {
 		return nil, errorLogin
