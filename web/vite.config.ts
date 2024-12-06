@@ -39,7 +39,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           replacement: pathResolve('src') + '/',
         },
       ],
-      dedupe: ['vue','data-fns'],
+      dedupe: ['vue'],
     },
     plugins: createVitePlugins(viteEnv, isBuild),
     define: {
