@@ -33,7 +33,7 @@
     "@vueup/vue-quill": "^1.1.0",
     "@vueuse/core": "^5.3.0",
     "axios": "^0.21.4",
-    "date-fns": "^2.28.0",
+    "date-fns": "^3.6.0",
     "echarts": "^5.3.2",
     "element-resize-detector": "^1.2.4",
     "highlight.js": "^11.8.0",
