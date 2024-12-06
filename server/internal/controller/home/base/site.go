@@ -24,6 +24,7 @@ func (a *cSite) Index(ctx context.Context, _ *base.SiteIndexReq) (res *base.Site
 	service.View().Render(ctx, model.View{Data: g.Map{
 		"name":    simple.AppName(ctx),
 		"version": consts.VersionApp,
+		"git:":    "2.9.4",
 	}})
 
 	// err = gerror.New("这是一个测试错误")
