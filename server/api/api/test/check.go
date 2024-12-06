@@ -6,7 +6,7 @@ import (
 )
 
 type AddReq struct {
-	g.Meta `path:"/testcheck/add" mothod:"post" tags:"测试" summary:"测试"`
+	g.Meta `path:"/testcheck/add" mothod:"all" tags:"测试" summary:"测试"`
 	testin.CheckAddInp
 }
 
