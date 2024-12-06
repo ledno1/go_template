@@ -38,7 +38,7 @@ func Init(ctx context.Context) {
 		return
 	}
 
-	fmt.Printf("欢迎使用HotGo！\r\n当前运行环境：%v, 运行根路径为：%v \r\nHotGo版本：v%v, gf版本：%v \n", runtime.GOOS, gfile.Pwd(), consts.VersionApp, gf.VERSION)
+	fmt.Printf("欢迎使用HotGo！\r\n当前运行环境：%v, 运行根路径为：%v \r\nHotGo版本：v%v, gf版本：%v \n 测试版本:v7.0", runtime.GOOS, gfile.Pwd(), consts.VersionApp, gf.VERSION)
 
 	// 初始化链路追踪
 	InitTrace(ctx)
