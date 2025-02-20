@@ -27,7 +27,11 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   const isBuild = command === 'build';
   return {
     base: VITE_PUBLIC_PATH,
-    esbuild: {},
+    esbuild: {
+      supported: {
+        'top-level-await': true // 启用 top-level await 支持
+      }
+    },
     resolve: {
       alias: [
         {
