@@ -71,7 +71,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       exclude: ['vue-demi'],
     },
     build: {
-      target: 'es2015',
+      target: 'es2022',
       cssTarget: 'chrome80',
       outDir: OUTPUT_DIR,
       minify: 'terser',
